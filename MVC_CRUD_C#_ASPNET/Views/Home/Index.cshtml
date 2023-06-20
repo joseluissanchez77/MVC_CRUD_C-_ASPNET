@@ -1,0 +1,48 @@
+﻿@model List<MVC_CRUD_C__ASPNET.Models.User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Lista de Usuarios</h5>
+    </div>
+    <div class="card-body">
+        <a class="btn-success btn-sm" asp-action="UserDetail" asp-controller="Home" asp-route-idUsuario="0">Crear Nuevo</a>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Cargo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach( var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Email</td>
+                        <td>@item.oPosition.Description</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="UserDetail" asp-controller="Home" asp-route-idUser="@item.Id">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="UserDelete" asp-controller="Home" asp-route-idUser="@item.Id">Eliminiar</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

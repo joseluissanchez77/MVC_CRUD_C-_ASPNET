@@ -1,0 +1,5 @@
+Scaffold-DbContext "Server=DESKTOP-T24582V; DataBase=MVCCRUD_C#_ASPNET;Integrated Security=true; TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models
+
+
+
+
